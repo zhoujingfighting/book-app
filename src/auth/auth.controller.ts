@@ -12,7 +12,7 @@ export class AuthController {
     // What if user forgot to input email or password?
     // Use nestjs validator
     console.log(body);
-    return this.authService.signup();
+    return this.authService.signup(body);
   }
 
   @Post('signin')
