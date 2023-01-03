@@ -8,11 +8,11 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Post('signup')
-  signup(@Body() body: AuthDto) {
+  async signup(@Body() body: AuthDto) {
     // What if user forgot to input email or password?
     // Use nestjs validator
     console.log(body);
-    return this.authService.signup(body);
+    return await this.authService.signup(body);
   }
 
   @Post('signin')
